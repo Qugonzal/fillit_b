@@ -38,9 +38,9 @@ typedef struct		s_map
 	char			**tab;
 }					t_map;
 
-char				**ft_reader(char *file);
+t_map				ft_input_read(char *file, t_map map, t_tetri **tetri);
+void				ft_display_map(char **tab, t_tetri **tetri);
 void				ft_display_error(int message);
-void				ft_display_map(char **tab);
 int					ft_square(int block_nb);
 int					ft_place(int x, int y, t_map *map, t_tetri *tetri);
 int					main(int ac, char **av);
