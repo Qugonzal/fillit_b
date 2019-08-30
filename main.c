@@ -6,7 +6,7 @@
 /*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 18:00:02 by quegonza          #+#    #+#             */
-/*   Updated: 2019/08/26 19:26:05 by quegonza         ###   ########.fr       */
+/*   Updated: 2019/08/30 15:25:46 by quegonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int		main(int ac, char **av)
 
 	if (ac != 2)
 		ft_display_error(1);
-	map = ft_input_read(av[1], map, &tetri);
+	map = ft_input_read(av[1], &tetri);
 //	ft_putstr("A");
 	while (ft_find_place(&map, tetri))
 	{

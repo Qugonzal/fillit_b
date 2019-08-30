@@ -57,12 +57,13 @@ void			ft_input_checker(char **tab)
 			ft_display_error(2);
 }
 
-t_map			ft_input_read(char *file, t_map map, t_tetri **tetri)
+t_map			ft_input_read(char *file, t_tetri **tetri)
 {
 	int		fd;
 	int		i;
 	char	buffer[547];
 	char	**tab;
+	t_map	map;
 
 	fd = open(file, O_RDONLY);
 	ft_bzero(buffer, sizeof(buffer));
