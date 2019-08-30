@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_input_read.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/30 16:05:21 by quegonza          #+#    #+#             */
+/*   Updated: 2019/08/30 16:33:32 by quegonza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 static int		ft_adjustment_check(char *str)
@@ -81,6 +93,7 @@ t_map			ft_input_read(char *file, t_tetri **tetri)
 		i++;
 	map.dim = ft_square(i);
 	*tetri = ft_mk_tetri(tab, i);
+	ft_free(tab, i);
 	map.tab = ft_map_creation(map.dim);
 	return (map);
 }

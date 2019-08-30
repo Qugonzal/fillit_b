@@ -6,7 +6,7 @@
 /*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 18:06:02 by quegonza          #+#    #+#             */
-/*   Updated: 2019/08/30 15:26:32 by quegonza         ###   ########.fr       */
+/*   Updated: 2019/08/30 16:34:23 by quegonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct		s_map
 }					t_map;
 
 t_map				ft_input_read(char *file, t_tetri **tetri);
+void				ft_free(char **ptr, int dim);
 void				ft_display_map(char **tab, t_tetri **tetri);
 void				ft_display_error(int message);
 int					ft_square(int block_nb);
