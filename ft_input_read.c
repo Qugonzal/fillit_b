@@ -6,7 +6,7 @@
 /*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 16:05:21 by quegonza          #+#    #+#             */
-/*   Updated: 2019/08/30 16:33:32 by quegonza         ###   ########.fr       */
+/*   Updated: 2019/09/02 18:00:20 by quegonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_map			ft_input_read(char *file, t_tetri **tetri)
 		ft_display_error(2);
 	i = -1;
 	while (buffer[++i])
-		if (buffer[i] == '\n' && buffer[i + 1] == '\n')
+		if (buffer[i] == '\n' && buffer[i + 1] == '\n' && buffer[i + 2])
 			buffer[i + 1] = '!';
 	if (!(tab = ft_strsplit(buffer, '!')))
 		ft_display_error(2);

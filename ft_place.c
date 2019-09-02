@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/30 16:05:43 by quegonza          #+#    #+#             */
-/*   Updated: 2019/08/30 16:05:51 by quegonza         ###   ########.fr       */
+/*   Created: 2019/08/30 17:00:34 by quegonza          #+#    #+#             */
+/*   Updated: 2019/09/02 19:30:28 by quegonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int		ft_find_place(t_map *map, t_tetri *tetri)
 				chk = ft_check_fill(x, y, map, tetri);
 				if (chk == 1)
 					break ;
-				if (chk == 2)
+				if (chk == 2 || chk == 3)
 					return (1);
 				if (!chk)
 					return (ft_place(x, y, map, tetri));

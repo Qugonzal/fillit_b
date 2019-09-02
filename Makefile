@@ -20,7 +20,6 @@ ft_store.c \
 ft_place.c \
 
 OBJ = $(SRC:.c=.o)
-OBJ2 = $(SRC:.c=.o)
 
 INC = -I ./libft/ -L ./libft -lft
 

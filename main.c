@@ -6,7 +6,7 @@
 /*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 18:00:02 by quegonza          #+#    #+#             */
-/*   Updated: 2019/08/30 16:30:36 by quegonza         ###   ########.fr       */
+/*   Updated: 2019/09/02 17:42:22 by quegonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,20 +98,17 @@ int		main(int ac, char **av)
 	if (ac != 2)
 		ft_display_error(1);
 	map = ft_input_read(av[1], &tetri);
-//	ft_putstr("A");
 	while (ft_find_place(&map, tetri))
 	{
 		ft_free(map.tab, map.dim);
 		map.tab = ft_map_creation(++map.dim);
 	}
-//	ft_putstr("B");
 	while (ft_recursive(&map, tetri))
 	{
 		ft_free(map.tab, map.dim);
 		map.tab = ft_map_creation(++map.dim);
 		ft_find_place(&map, tetri);
 	}
-//	ft_putstr("C");
 	ft_display_map(map.tab, &tetri);
 	return (0);
 }
