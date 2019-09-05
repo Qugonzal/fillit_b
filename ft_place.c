@@ -6,7 +6,7 @@
 /*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 17:00:34 by quegonza          #+#    #+#             */
-/*   Updated: 2019/09/05 17:01:11 by quegonza         ###   ########.fr       */
+/*   Updated: 2019/09/05 17:16:48 by quegonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int		ft_check_fill(int x, int y, t_map *map, t_tetri *tetri)
 	if (y + tetri->dim_y >= map->dim)
 		return (2);
 	if (tetri->dim_x == 5)
-			return (ft_special_dim(x, y, map, tetri));
+		return (ft_special_dim(x, y, map, tetri));
 	else if (x + tetri->dim_x >= map->dim)
-			return (1);
-if (x + tetri->dim_x < 0 ||
+		return (1);
+	if (x + tetri->dim_x < 0 ||
 			map->tab[y + tetri->y[0]][x + tetri->x[0]] != '.' ||
 			map->tab[y + tetri->y[1]][x + tetri->x[1]] != '.' ||
 			map->tab[y + tetri->y[2]][x + tetri->x[2]] != '.')
