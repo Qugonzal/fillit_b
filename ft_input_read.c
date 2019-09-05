@@ -6,7 +6,7 @@
 /*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 16:05:21 by quegonza          #+#    #+#             */
-/*   Updated: 2019/09/02 18:00:20 by quegonza         ###   ########.fr       */
+/*   Updated: 2019/09/05 16:49:19 by quegonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static int		ft_adjustment_check(char *str)
 	{
 		if (str[index] == '#')
 		{
-			if (str[index + 1] == '#' && ((index + 1) <= 20))
+			if (index + 1 <= 20 && str[index + 1] == '#')
 				adj_count++;
-			if (str[index - 1] == '#' && ((index - 1) >= 0))
+			if (index - 1 >= 0 && str[index - 1] == '#')
 				adj_count++;
-			if (str[index + 5] == '#' && ((index + 5) <= 20))
+			if (((index + 5) <= 20) && str[index + 5] == '#')
 				adj_count++;
-			if (str[index - 5] == '#' && ((index - 5) >= 0))
+			if (((index - 5) >= 0 && str[index - 5] == '#'))
 				adj_count++;
 		}
 	}

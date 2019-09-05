@@ -6,7 +6,7 @@
 /*   By: quegonza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 17:00:34 by quegonza          #+#    #+#             */
-/*   Updated: 2019/09/02 19:30:28 by quegonza         ###   ########.fr       */
+/*   Updated: 2019/09/05 17:01:11 by quegonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,37 +20,35 @@ void	ft_erase(int x, int y, char **tab, t_tetri *tetri)
 	tab[y + tetri->y[2]][x + tetri->x[2]] = '.';
 }
 
-int		ft_special_dim(int x, int dim, int *x_tetri)
+int		ft_special_dim(int x, int y, t_map *map, t_tetri *tetri)
 {
 	int i;
 
 	i = 0;
 	while (i != 3)
 	{
-		if (x + x_tetri[i] >= dim)
+		if (x + tetri->x[i] >= map->dim)
 			return (1);
-		if (x + x_tetri[i] < 0)
+		if (x + tetri->x[i] < 0)
 			return (3);
 		i++;
 	}
+	if (	map->tab[y + tetri->y[0]][x + tetri->x[0]] != '.' ||
+			map->tab[y + tetri->y[1]][x + tetri->x[1]] != '.' ||
+			map->tab[y + tetri->y[2]][x + tetri->x[2]] != '.')
+		return (3);
 	return (0);
 }
 
 int		ft_check_fill(int x, int y, t_map *map, t_tetri *tetri)
 {
-	if (tetri->dim_x == 5)
-	{
-		if (ft_special_dim(x, map->dim, tetri->x) != 0)
-			return (ft_special_dim(x, map->dim, tetri->x));
-	}
-	if (tetri->dim_x != 5)
-	{
-		if (x + tetri->dim_x >= map->dim)
-			return (1);
-	}
 	if (y + tetri->dim_y >= map->dim)
 		return (2);
-	if (x + tetri->dim_x < 0 ||
+	if (tetri->dim_x == 5)
+			return (ft_special_dim(x, y, map, tetri));
+	else if (x + tetri->dim_x >= map->dim)
+			return (1);
+if (x + tetri->dim_x < 0 ||
 			map->tab[y + tetri->y[0]][x + tetri->x[0]] != '.' ||
 			map->tab[y + tetri->y[1]][x + tetri->x[1]] != '.' ||
 			map->tab[y + tetri->y[2]][x + tetri->x[2]] != '.')
@@ -91,7 +89,7 @@ int		ft_find_place(t_map *map, t_tetri *tetri)
 				chk = ft_check_fill(x, y, map, tetri);
 				if (chk == 1)
 					break ;
-				if (chk == 2 || chk == 3)
+				if (chk == 2)
 					return (1);
 				if (!chk)
 					return (ft_place(x, y, map, tetri));
