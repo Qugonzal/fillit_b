@@ -73,13 +73,13 @@ t_map			ft_input_read(char *file, t_tetri **tetri)
 {
 	int		fd;
 	int		i;
-	char	buffer[547];
+	char	buffer[BUF + 1];
 	char	**tab;
 	t_map	map;
 
 	fd = open(file, O_RDONLY);
 	ft_bzero(buffer, sizeof(buffer));
-	if (!(i = read(fd, buffer, 546)) || i == -1 || i > 546 || (close(fd) == -1))
+	if (!(i = read(fd, buffer, BUF)) || i == -1 || i > BUF || (close(fd) == -1))
 		ft_display_error(2);
 	i = -1;
 	while (buffer[++i])

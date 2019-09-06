@@ -81,12 +81,9 @@ void	ft_free(char **ptr, int dim)
 {
 	int i;
 
-	i = 0;
-	while (i < dim)
-	{
+	i = -1;
+	while (++i < dim)
 		free(ptr[i]);
-		i++;
-	}
 	free(ptr);
 }
 

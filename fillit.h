@@ -19,6 +19,12 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include "libft/libft.h"
+/*
+** Mind to increase the next define (BUF)
+** by 21 for each tetrimino you want to add in input file.
+** Default value is 546 (= 21 * 26).
+*/
+# define BUF 3150
 
 typedef struct		s_tetrimino
 {

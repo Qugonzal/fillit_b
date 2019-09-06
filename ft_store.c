@@ -85,6 +85,8 @@ t_tetri		*ft_mk_tetri(char **tab, int elem_nbr)
 		tetri.dim_x = find_dimension(tetri.x);
 		tetri.dim_y = find_dimension(tetri.y);
 		elem[n] = tetri;
+		if (name == 126)
+			name = 63;
 		name++;
 		n++;
 	}
